@@ -1,3 +1,57 @@
 page-home {
 
+  ion-row {
+    padding: 0;
+  }
+
+  @media (min-width: 332px) {
+    .news {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      //align-items: stretch;
+      min-width: 0;
+      width: auto;
+    }
+
+    .card-md {
+      margin: 10px 0 0 0;
+    }
+
+    ion-card {
+      order: 999999;
+      min-width: 150px;
+      max-width: 19vw;
+      min-height: 300px;
+      flex: 1 1 23vw;
+
+      &.flex-grow {
+        //the last card
+        //flex-grow: 0.5;
+      }
+
+      &.flex-align-self {
+        // 5. align-self: auto | flex-start | flex-end | center | baseline | stretch;
+        //This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items. this works when the flex container has an height. It's about VERTICAL remaining space only. to move an item horizontally use margins
+        //align-self: flex-start;
+        //margin:auto;
+      }
+
+
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+    }
+  }
+
+  @media (max-width: 331px) {
+
+  }
+
 }
