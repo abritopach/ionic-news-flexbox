@@ -1,56 +1,94 @@
 page-home {
 
+
+  /* Breakpoints
+  // ========================================================================== */
+  $break-0:0;
+  $break-1:20em; /* 320px */
+  $break-2: 30em; /* 480px */
+  $break-3: 37.5em; /* 600px */
+  $break-4: 48em; /* 768px */
+  $break-5: 60em; /* 960px */
+  $break-6: 68.75em; /* 1100px */
+
+  $browser-default-font-size:16px;
+  $layout-size:16px;
+
+  /* Convert px to ems
+  // ========================================================================== */
+  @function px-to-ems( $pixels, $context: $browser-default-font-size ) {
+    @return #{$pixels/$context}em;
+  }
+
+  @function return-ems( $pixels, $context ) {
+    @return #{$pixels/$context}em;
+  }
+  @function layout-ems( $pixels, $context: $layout-size ) {
+    @return #{$pixels/$context}em;
+  }
+
+  @mixin center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .news-listing {
+    padding: px-to-ems(22px) px-to-ems(17px) px-to-ems(4px);
+    @media (min-width:$break-1) {
+      @include center;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      &:after {
+        content:'';
+        display: block;
+        margin-left: 48.38%;
+      }
+    }
+    @media (min-width:$break-4) {
+      padding-left: px-to-ems(26px);
+      padding-right:px-to-ems(26px);
+      &:after {
+        margin-left:31.91%;
+      }
+    }
+    @media (min-width:$break-5) {
+      padding-left:px-to-ems(28px);
+      padding-right:px-to-ems(28px);
+    }
+    @media (min-width:layout-ems(996px)) {
+      padding-left:calc(50% - 470px);
+      padding-right:calc(50% - 470px);
+    }
+  }
+  .new {
+    @include center;
+    margin-bottom: px-to-ems(18px);
+    max-width: px-to-ems(300px);
+    @media (min-width:$break-1) {
+      margin-left:0;
+      margin-right: 0;
+      max-width:none;
+      width:48.38%;
+    }
+    @media (min-width:$break-4) {
+      width:31.91%;
+    }
+  }
+
   ion-row {
     padding: 0;
   }
 
-  @media (min-width: 332px) {
-    .news {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-      align-content: flex-start;
-      //align-items: stretch;
-      min-width: 0;
-      width: auto;
+  ion-card {
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
-
-    .card-md {
-      margin: 10px 0 0 0;
-    }
-
-    ion-card {
-      order: 999999;
-      min-width: 150px;
-      max-width: 19vw;
-      min-height: 300px;
-      flex: 1 1 23vw;
-
-      &.flex-grow {
-        //the last card
-        //flex-grow: 0.5;
-      }
-
-      &.flex-align-self {
-        // 5. align-self: auto | flex-start | flex-end | center | baseline | stretch;
-        //This allows the default alignment (or the one specified by align-items) to be overridden for individual flex items. this works when the flex container has an height. It's about VERTICAL remaining space only. to move an item horizontally use margins
-        //align-self: flex-start;
-        //margin:auto;
-      }
-
-
-      p {
-        display: -webkit-box;
-        -webkit-line-clamp: 6;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-    }
-  }
-
-  @media (max-width: 331px) {
 
   }
 
