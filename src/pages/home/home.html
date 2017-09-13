@@ -7,241 +7,36 @@
 </ion-header>
 
 <ion-content padding>
+    <h2 text-center>ABC News Top Headlines</h2>
     <div class="news-listing">
-        <div class="new">
+        <div class="new"  *ngFor="let article of articles">
+            <a href="{{article.url}}" target="_blank">
             <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
+                <img src="{{article.urlToImage}}"/>
                 <ion-card-content text-wrap>
                     <ion-card-title>
-                        Nine Inch Nails Live
+                        {{article.title}}
                     </ion-card-title>
                     <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
+                        {{article.description}}
                     </p>
                     <ion-row>
                         <ion-col center text-center>
                             <ion-note>
-                                12/09/2017
+                                {{article.publishedAt}}
                             </ion-note>
                         </ion-col>
                     </ion-row>
                 </ion-card-content>
             </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
-        </div>
-        <div class="new">
-            <ion-card>
-                <img src="https://www.colourbox.com/preview/1686911-blurred-color-lights-background.jpg"/>
-                <ion-card-content text-wrap>
-                    <ion-card-title>
-                        Nine Inch Nails Live
-                    </ion-card-title>
-                    <p>
-                        The most popular industrial group ever, and largely
-                        responsible for bringing the music to a mass audience.
-                    </p>
-                    <ion-row>
-                        <ion-col center text-center>
-                            <ion-note>
-                                12/09/2017
-                            </ion-note>
-                        </ion-col>
-                    </ion-row>
-                </ion-card-content>
-            </ion-card>
+            </a>
         </div>
     </div>
 </ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-title text-center>© 2017 Adrián Brito Pacheco <a href="https://github.com/abritopach/" target="_blank">GitHub</a></ion-title>
+        <ion-item text-center>Get live headlines <a href="https://newsapi.org/" target="_blank">News API</a></ion-item>
+    </ion-toolbar>
+</ion-footer>

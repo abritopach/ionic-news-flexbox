@@ -74,6 +74,10 @@ page-home {
     @media (min-width:$break-4) {
       width:31.91%;
     }
+
+    a {
+      text-decoration: none;
+    }
   }
 
   ion-row {

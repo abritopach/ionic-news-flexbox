@@ -1,14 +1,34 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, LoadingController } from 'ionic-angular';
+
+import { NewsServiceProvider } from '../../providers/news-service/news-service';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+    selector: 'page-home',
+    templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+    articles: any;
 
-  }
+    constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,
+                public newsServiceProvider: NewsServiceProvider) {
+
+    }
+
+    ionViewDidLoad() {
+
+        let loading = this.loadingCtrl.create({
+            content: "Loading Videos..."
+        });
+
+        loading.present();
+        this.newsServiceProvider.getHeadlines()
+            .then(data => {
+                console.log(data);
+                this.articles = data;
+                loading.dismiss();
+            });
+    }
 
 }
