@@ -10,6 +10,7 @@ import { NewsServiceProvider } from '../../providers/news-service/news-service';
 export class HomePage {
 
     articles: any;
+    newsSources: string = "abc-news-au";
 
     constructor(public navCtrl: NavController, public loadingCtrl: LoadingController,
                 public newsServiceProvider: NewsServiceProvider) {
@@ -23,9 +24,24 @@ export class HomePage {
         });
 
         loading.present();
-        this.newsServiceProvider.getHeadlines()
+        this.newsServiceProvider.getHeadlines(this.newsSources)
             .then(data => {
-                console.log(data);
+                //console.log(data);
+                this.articles = data;
+                loading.dismiss();
+            });
+    }
+
+    onSegmentClicked(event) {
+
+        let loading = this.loadingCtrl.create({
+            content: "Loading Videos..."
+        });
+
+        loading.present();
+        this.newsServiceProvider.getHeadlines(this.newsSources)
+            .then(data => {
+                //console.log(data);
                 this.articles = data;
                 loading.dismiss();
             });

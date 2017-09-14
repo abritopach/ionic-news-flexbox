@@ -4,10 +4,24 @@
             Ionic Flexbox News
         </ion-title>
     </ion-navbar>
+
+    <ion-toolbar no-border-top>
+        <ion-segment [(ngModel)]="newsSources" (click)="onSegmentClicked($event)">
+            <ion-segment-button value="abc-news-au">
+                <img src="http://mobile.abc.net.au/cm/cb/4355924/News+iOS+120x120/data.png" width="64px" height="64px">
+            </ion-segment-button>
+            <ion-segment-button value="bbc-news">
+                <img src="http://m.files.bbci.co.uk/modules/bbc-morph-news-waf-page-meta/1.2.0/apple-touch-icon.png" width="64px" height="64px">
+            </ion-segment-button>
+            <ion-segment-button value="mtv-news">
+                <img src="http://www.mtv.com/apple-touch-icon-precomposed.png" width="64px" height="64px">
+            </ion-segment-button>
+        </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <h2 text-center>ABC News Top Headlines</h2>
+    <h2 text-center>Top Headlines</h2>
     <div class="news-listing">
         <div class="new"  *ngFor="let article of articles">
             <a href="{{article.url}}" target="_blank">
@@ -23,7 +37,7 @@
                     <ion-row>
                         <ion-col center text-center>
                             <ion-note>
-                                {{article.publishedAt}}
+                                {{article.publishedAt | date: 'dd/MM/yyyy H:mm' }}
                             </ion-note>
                         </ion-col>
                     </ion-row>
